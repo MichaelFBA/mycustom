@@ -15,6 +15,10 @@ Meteor.publish('feed', function() {
   return Activities.find({}, {sort: {date: -1}, limit: 10});
 });
 
+Meteor.publish('blankSearch', function() {
+  return Activities.find({}, {sort: {date: -1}, limit: 10});
+});
+
 Meteor.publish('recipe', function(name) {
   check(name, String);
   return [

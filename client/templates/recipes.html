@@ -4,6 +4,7 @@
 
     <div class="content-scrollable">
       <div class="list-recipes">
+      {{debug}}
         {{#each this}}
           {{#if highlighted}}
             {{> recipeItem recipe=this size='large'}}

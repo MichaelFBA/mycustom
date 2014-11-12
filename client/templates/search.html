@@ -1,0 +1,21 @@
+<template name="search">
+{{debug}}
+    <div class="page search">
+        {{> nav title='Search' black=false}}
+
+        <div class="content-scrollable">
+
+        	<div class="search-title">
+                <span class="title-callout">Search</span>
+                <input type="text" id="search" placeholder="Search for type, maker or comment">
+            </div>
+
+            <div class="list-recipes">
+                {{#each this}} 
+                	{{> recipeItem recipe=this size='small'}} 
+                {{/each}}
+            </div>
+        </div>
+
+    </div>
+</template>
