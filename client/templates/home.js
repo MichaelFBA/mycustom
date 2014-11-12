@@ -13,7 +13,7 @@ Template.home.helpers({
   },
   
   activities: function() {
-    return Activities.latest();
+    return Activities.find();
   },
   
   latestNews: function() {

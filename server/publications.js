@@ -7,7 +7,8 @@ Meteor.publish('news', function() {
 });
 
 Meteor.publish('latestActivity', function () {
-  return Activities.latest();
+  // return Activities.latest();
+  return Activities.find({}, {sort: {date: -1}, limit: 10});
 });
 
 Meteor.publish('feed', function() {
