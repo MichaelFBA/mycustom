@@ -1,5 +1,5 @@
 Template.wheels.events({
   'click .js-share': function() {
-    Overlay.open('shareOverlay', this);
+    Overlay.open('wheelsOverlay', this);
   }
 });
