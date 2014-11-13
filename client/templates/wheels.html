@@ -1,0 +1,23 @@
+<template name="wheels">
+    {{debug}}
+    <div class="page wheels">
+        {{> nav title='Wheels' black=false}}
+
+        <div class="content-scrollable">
+
+
+            <div class="list-wheels">
+                {{#each activities}} {{> activity}} {{else}}
+                <div class="wrapper-message">
+                	<img class="alternateLogo" src="img/app/logo-alternate.svg" alt="My Custom" />
+                    <div class="title-message">Oh no! You dont have anything in your Garage yet</div>
+                    <div class="subtitle-message">Add your custom car, motorycle, boat, truck or anything with an engine here.
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+        </div>
+        <a href="#" class="btn-primary js-share">Add New Custom</a>
+    </div>
+</template>
