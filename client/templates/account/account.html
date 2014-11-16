@@ -1,6 +1,10 @@
 <template name="account">
     <div class="page account">
-        {{debug}} {{> nav title=currentUser.profile.name}}
+        {{# nav title=currentUser.profile.name}}
+            <div class="nav-group right">
+                <img src="{{profile.picture}}" class="img-responsive">
+        	</div>
+        {{/nav}}
 
         <div class="content-scrollable">
         	<div class="row bbt bcLight">
@@ -18,11 +22,12 @@
             	<div class="small-3 columns"><h2 class="strong mbn pan veryTight">{{getFollowers _id}}</h2><small>Followers</small></div>
             	<div class="small-3 columns"><h2 class="strong mbn pan veryTight">{{getFollowing _id}}</h2><small>Following</small></div>
             </section>
-            <div class="row bbt bcLight">
-                <div class="small-12 columns">
-                    <p class="mts">{{description}}</p>
-                </div>
-            </div>
+            <ul class="small-block-grid-3">
+                {{#each getRelated}}
+                	{{debug}}
+                    {{> imageGrid}}
+                {{/each}}
+            </ul>
         </div>
     </div>
 </template>

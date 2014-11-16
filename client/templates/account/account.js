@@ -9,10 +9,13 @@ Template.account.helpers({
     return Wheels.find({userId: id }).count();
   },
   getFollowers: function(id) {
-    return Activities.find({userId: id }).count();
+    return 0;
   },
   getFollowing: function(id ) {
-    return Activities.find({userId: id }).count();
+    return 0;
   },
+  getRelated: function () {
+	return Activities.find({userId: Router.current().params['_id'] }).fetch()
+  }
 
 });

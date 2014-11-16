@@ -8,9 +8,8 @@ Accounts.onCreateUser(function(options, user) {
         user.profile.name = user.services.facebook.name;
    }
    if (user.services.twitter) {
-        options.profile.picture = user.services.twitter.picture
+        options.profile.picture = user.services.twitter.profile_image_url_https
         user.profile = options.profile;
-        user.profile.name = user.services.google.name;
     }
 
   // If this is the first user going into the database, make them an admin

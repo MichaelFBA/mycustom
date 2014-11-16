@@ -9,7 +9,7 @@
             <div class="row bbt bcLight">
                 <div class="small-2 columns pln">
                 <img src="{{userAvatar}}" class="img-responsive"></div>
-                <div class="small-10 columns pln">
+                <div class="small-10 columns pln prt">
                     <button class="button tiny pull-right mbn mtt">Follow</button>
                     <span class="strong mvs inlineBlock">{{userName}}</span> 
                 </div>
@@ -21,7 +21,7 @@
             </div>
             <ul class="small-block-grid-3">
                 {{#each getRelated}}
-                    {{> getSingle}}
+                    {{> imageGrid}}
                 {{/each}}
             </ul>
             {{#if currentUser}}
@@ -35,8 +35,4 @@
         </div>
 
     </div>
-</template>
-
-<template name="getSingle">
-    <li class="pan"><a href="../activity/{{_id}}" class="bg-image small block" style="background-image: url('{{this.image}}');"></a></li>
 </template>
