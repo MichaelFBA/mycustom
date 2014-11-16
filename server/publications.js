@@ -29,7 +29,7 @@ Meteor.publish('recipe', function(name) {
 
 Meteor.publish('wheels', function() {
   console.log(this.userId)
-  return Whels.find({owner:this.userId});
+  return Wheels.find({owner:this.userId});
 })
 
 // autopublish the user's bookmarks and admin status

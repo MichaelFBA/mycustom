@@ -4,6 +4,7 @@ var IMAGE_KEY = 'shareOverlayAttachedImage';
 Template.wheelsOverlay.created = function() {
   Session.set(TWEETING_KEY, true);
   Session.set(IMAGE_KEY, null);
+  Session.set("Type", Car);
 }
 
 Template.wheelsOverlay.helpers({
@@ -17,6 +18,14 @@ Template.wheelsOverlay.helpers({
   
   tweeting: function() {
     return Session.get(TWEETING_KEY);
+  },
+
+  getType: function(){
+    return Type;
+  },
+
+  getMake: function(){
+    return Session.get("Type");
   }
 });
 
@@ -32,6 +41,10 @@ Template.wheelsOverlay.events({
   
   'click .js-unattach-image': function() {
     Session.set(IMAGE_KEY, null);
+  },
+
+  'change #type': function(event) {
+    Session.set("Type", window[$(event.target).val()] );
   },
   
   'change [name=tweeting]': function(event) {

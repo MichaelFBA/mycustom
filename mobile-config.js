@@ -1,9 +1,9 @@
 App.info({
-  name: 'Local Market',
-  description: 'A recipe sharing app made in Meteor.',
-  author: 'Percolate Studio Team',
-  email: 'us@percolatestudio.com',
-  website: 'http://percolatestudio.com',
+  name: 'My Custom',
+  description: 'My Custom is a platform to show off your custom motorcycle, car, truck or engine on wheels.',
+  author: 'My Custom Team',
+  email: 'bell.daniel.michael@gmail.com',
+  website: 'http://my-custom.com',
   version: '0.0.1'
 });
 

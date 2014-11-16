@@ -1,8 +1,19 @@
 .page.search {
   .content-scrollable { padding-bottom: 3em; }
-  .search-title{ 
-    margin-top: 50px;
-    padding: 1em 1.25em;
-  }
+  .form-group {
+        .display(flex);
+        padding: 1em 1.25em;
+        margin-top: 50px;
+    	label{
+    		padding: 1rem 0rem;
+    		.flex(1);
+    		flex-grow: 1;
+    	}
+    	input{
+    		.flex(3);
+    		flex-grow: 3;
+    	}
+
+    }
 
 }

@@ -1,57 +1,80 @@
 <template name="wheelsOverlay">
-  {{#if currentUser}}
+    {{#if currentUser}}
     <div class="overlay share">
 
-      {{#unless attachedImage}}
-        <a href="#" class="js-close-overlay overlay-dismiss"><span class="icon-cross"></span></a>
+        {{#unless attachedImage}}
+        <a href="#" class="js-close-overlay overlay-dismiss">
+            <span class="icon-cross"></span>
+        </a>
         <div class="wrapper-heading">
-          <div class="title-overlay">Add your custom</div>
-          <div class="subtitle-overlay">Share what you made with the My Custom Community.</div>
+            <div class="title-overlay">Add your custom</div>
+            <div class="subtitle-overlay">Share what you made with the My Custom Community.</div>
         </div>
 
         <div class="wrapper-camera">
-          <a class="js-attach-image btn-camera"><span class="icon-camera"></span></a>
-          <div class="subtext-camera">Add your photo</div>
+            <a class="js-attach-image btn-camera">
+                <span class="icon-camera"></span>
+            </a>
+            <div class="subtext-camera">Add your photo</div>
         </div>
-      {{else}}
-        <a href="#" class="js-unattach-image overlay-back"><span class="icon-arrow-left-alt"></span></a>
-        <div class="title-page">Share</div>
-        <a href="#" class="js-close-overlay overlay-dismiss"><span class="icon-cross"></span></a>
+        {{else}}
+        <a href="#" class="js-unattach-image overlay-back">
+            <span class="icon-arrow-left-alt"></span>
+        </a>
+        <div class="title-page">Add Custom</div>
+        <a href="#" class="js-close-overlay overlay-dismiss">
+            <span class="icon-cross"></span>
+        </a>
 
-        <div class="bg-image" style="background-image: url('{{attachedImage}}')"></div>
-
+        <!-- <div class="bg-image" style="background-image: url('{{attachedImage}}')"></div> -->
+        
         <form class="form-share">
-          <div class="form-group">
-            <div class="avatar">
-              <img src="{{avatar}}" class="image-avatar">
+            <section class="content-scrollable">
+                <div class="form-group">
+                    <label>Type</label>
+                    <select id="type" class="">
+                    {{#each getType}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Make</label>
+                    <select id="type" class="">
+                    {{#each getMake}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p>Missing your custom make? <a href="mailto:info@my-custom.com">Let us know</a></p>
+                </div>
+                <div class="form-group">
+                	<label>Model</label>
+                    <input type="text" id="model" class="" placeholder="Add model of your custom">
+                </div>
+                <div class="form-group">   
+                    <label>Year</label>
+                    <input type="text" id="year" placeholder="When was it built">
+                </div> 
+                <textarea id="description" rows="4" placeholder="Describe your custom. It can be the backstory of where you purchased and how it was built. Which parts were modified and by who?"></textarea>
+                 <!--           <textarea name="text" type="text" autocapitalize="off" autocorrect="off" required maxlength="140" class="message-share" placeholder="Add advice, suggestions, or thoughts to share with the community..."></textarea> -->
+            </section>
+
+            <div class="wrapper-checkbox">
+                <label for="tweeting" class="checkbox">
+                    <input type="checkbox" name="tweeting" id="tweeting" checked>
+                    <span>Post to Twitter</span>
+                </label>
             </div>
 
-            <textarea name="text" type="text"
-              autocapitalize="off" autocorrect="off"
-              required maxlength="140"
-              class="message-share"
-              placeholder="Add advice, suggestions, or thoughts to share with the community..."></textarea>
-          </div>
-
-          <div class="wrapper-checkbox">
-            <label for="tweeting" class="checkbox">
-              <input type="checkbox" name="tweeting" id="tweeting" checked>
-              <span>Post to Twitter</span>
-            </label>
-          </div>
-
-          <button class="btn-primary" type='submit'>
-            {{#if tweeting}}
-              Share &amp; Tweet
-            {{else}}
-              Share
-            {{/if}}
-          </button>
+            <button class="btn-primary" type='submit'>
+                {{#if tweeting}} Share &amp; Tweet {{else}} Share {{/if}}
+            </button>
         </form>
-      {{/unless}}
+        
+        {{/unless}}
 
     </div>
-  {{else}}
-    {{> authOverlay}}
-  {{/if}}
+    {{else}} {{> authOverlay}} {{/if}}
 </template>
