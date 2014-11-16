@@ -1,0 +1,27 @@
+<template name="comments">
+    {{debug}}
+
+    <div class="page comments">
+        {{> nav title="Comments" subtext=model black=true back=true }}
+
+        <div class="content-scrollable">
+            <div class="row bbt bcLight">
+                <div class="small-2 columns pln">
+                    <img src="{{userAvatar}}" class="img-responsive">
+                </div>
+                <div class="small-10 columns pln prt">
+                    <span class="strong mvs inlineBlock">{{userName}}</span>
+                </div>
+            </div>
+            <div class="row collapse">
+                <div class="small-10 columns">
+                    <input type="text" placeholder="Hex Value">
+                </div>
+                <div class="small-2 columns">
+                    <a href="#" class="button postfix">Go</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

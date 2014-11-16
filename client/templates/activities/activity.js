@@ -25,3 +25,4 @@ Template.activity.helpers({
       { query: { activityId: this._id } })
   }
 })
+
