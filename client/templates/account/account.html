@@ -1,22 +1,11 @@
 <template name="account">
     <div class="page account">
-        {{# nav title=currentUser.profile.name}}
-            <div class="nav-group right">
-                <img src="{{profile.picture}}" class="img-responsive">
-        	</div>
+        {{#nav title=currentUser.profile.name }}
+             <img src="{{profile.picture}}" class="img-responsive">
         {{/nav}}
 
         <div class="content-scrollable">
-        	<div class="row bbt bcLight">
-                <div class="small-4 columns pln">
-                	<img src="{{profile.picture}}" class="img-responsive">
-                	<button class="button tiny pull-right mbn mtt">Follow</button>
-                </div>
-                <div class="small-8 columns pln">
-                    
-                </div>
-            </div>
-            <section class="row text-center">
+            <section class="row text-center pvs panel mbn">
             	<div class="small-3 columns"><h2 class="strong mbn pan veryTight">{{getMedia _id}}</h2><small>Media</small></div>
             	<div class="small-3 columns"><h2 class="strong mbn pan veryTight">{{getWheels _id}}</h2><small>Customs</small></div>
             	<div class="small-3 columns"><h2 class="strong mbn pan veryTight">{{getFollowers _id}}</h2><small>Followers</small></div>

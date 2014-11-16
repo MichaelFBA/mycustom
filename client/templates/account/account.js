@@ -13,9 +13,5 @@ Template.account.helpers({
   },
   getFollowing: function(id ) {
     return 0;
-  },
-  getRelated: function () {
-	return Activities.find({userId: Router.current().params['_id'] }).fetch()
   }
-
 });

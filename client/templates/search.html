@@ -10,11 +10,11 @@
                 <input type="text" id="search" placeholder="Search for type, maker or comment">
             </div>
 
-            <div class="list-recipes">
-                {{#each this}} 
-                	{{> recipeItem recipe=this size='small'}} 
+            <ul class="small-block-grid-3">
+                {{#each getSearchResults}}
+                    {{> imageGrid}}
                 {{/each}}
-            </div>
+            </ul>
         </div>
 
     </div>

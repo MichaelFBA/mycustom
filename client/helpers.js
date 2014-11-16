@@ -41,6 +41,10 @@ UI.registerHelper("formatTime", function(time) {
   return moment(time).fromNow();
 })
 
+UI.registerHelper("getRelated", function(){
+  return Activities.find({userId: Router.current().params['_id'] }).fetch()
+})
+
 UI.registerHelper("debug", function(optionalValue) {
   console.log("Current Context");
   console.log("====================");
