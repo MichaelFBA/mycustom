@@ -29,6 +29,14 @@ Meteor.publish('recipe', function(name) {
 
 //Modifed
 
+Meteor.publish('getUserData', function(id) {
+  check(id, String);
+  return [
+    Activities.find({userId: id}),
+    Wheels.find({userId: id})
+  ];
+});
+
 Meteor.publish('getRelatedActivities', function(id) {
   return Activities.find({wheels: id}, {sort: {date: -1}, limit: 20});
 });
@@ -41,6 +49,10 @@ Meteor.publish('wheels', function() {
 Meteor.publish('getWheels', function(id) {
   return Wheels.find({_id: id });
 })
+
+Meteor.publish('getUser', function(id) {
+  return Meteor.users.find({_id: id});
+});
 
 // autopublish the user's bookmarks and admin status
 Meteor.publish(null, function() {
