@@ -1,0 +1,43 @@
+<template name="getWheels">
+{{debug}}
+
+    <div class="page get-wheels">
+        {{> nav title=make subtext=model black=true back=true }}
+
+        <div class="content-scrollable">
+            <div class="bg-image top" style="background-image: url('{{image}}');"></div>
+            <div class="row bbt bcLight">
+                <div class="small-2 columns pln">
+                <img src="{{userAvatar}}" class="img-responsive"></div>
+                <div class="small-10 columns pln">
+                    <button class="button tiny pull-right mbn mtt">Follow</button>
+                    <span class="strong mvs inlineBlock">{{userName}}</span> 
+                </div>
+                
+            </div>
+            <div class="row bbt bcLight">
+                <div class="small-12 columns">
+                    <p class="mts">{{description}}</p>
+                </div>
+            </div>
+            <ul class="small-block-grid-3">
+                {{#each getRelated}}
+                    {{> getSingle}}
+                {{/each}}
+            </ul>
+            {{#if currentUser}}
+            <div class="row bbt mtm bcLight">
+                <div class="small-12 columns">
+                    <button class="expand button tiny warning">Remove custom</button>
+                </div>
+            </div>
+            {{/if}}
+
+        </div>
+
+    </div>
+</template>
+
+<template name="getSingle">
+    <li class="pan"><a href="../activity/{{_id}}" class="bg-image small block" style="background-image: url('{{this.image}}');"></a></li>
+</template>

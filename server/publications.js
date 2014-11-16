@@ -27,9 +27,19 @@ Meteor.publish('recipe', function(name) {
   ];
 });
 
+//Modifed
+
+Meteor.publish('getRelatedActivities', function(id) {
+  return Activities.find({wheels: id}, {sort: {date: -1}, limit: 20});
+});
+
+
 Meteor.publish('wheels', function() {
-  console.log(this.userId)
-  return Wheels.find({owner:this.userId});
+  return Wheels.find({userId:this.userId}, {sort: {date: -1} });
+})
+
+Meteor.publish('getWheels', function(id) {
+  return Wheels.find({_id: id });
 })
 
 // autopublish the user's bookmarks and admin status

@@ -11,7 +11,6 @@ fastclick
 tmeasday:publish-counts@0.3.1
 iron:router
 percolate:velocityjs
-accounts-twitter
 service-configuration
 percolate:wireframing
 mdg:camera
@@ -19,4 +18,7 @@ mdg:geolocation
 oauth1
 request
 launch-screen
+matthew:foundation5-sass
+accounts-twitter
+accounts-facebook
 

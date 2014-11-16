@@ -1,4 +1,5 @@
 accounts-base@1.1.2
+accounts-facebook@1.0.2
 accounts-oauth@1.1.2
 accounts-twitter@1.0.2
 application-configuration@1.0.3
@@ -17,8 +18,10 @@ ddp@1.0.11
 deps@1.0.5
 ejson@1.0.4
 email@1.0.4
+facebook@1.1.2
 fastclick@1.0.1
 follower-livedata@1.0.2
+fourseven:scss@1.0.0
 geojson-utils@1.0.1
 html-tools@1.0.2
 htmljs@1.0.2
@@ -36,6 +39,7 @@ less@1.0.11
 livedata@1.0.11
 localstorage@1.0.1
 logging@1.0.5
+matthew:foundation5-sass@1.0.0
 mdg:camera@1.1.2
 mdg:geolocation@1.0.2
 meteor-platform@1.2.0
@@ -45,6 +49,7 @@ minimongo@1.0.5
 mobile-status-bar@1.0.1
 mongo@1.0.8
 oauth1@1.1.2
+oauth2@1.1.1
 oauth@1.1.2
 observe-sequence@1.0.3
 ordered-dict@1.0.1

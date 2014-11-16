@@ -1,0 +1,63 @@
+<template name="activityOverlay">
+    {{#if currentUser}}
+    <div class="overlay activity">
+
+        {{#unless attachedImage}}
+        <a href="#" class="js-close-overlay overlay-dismiss">
+            <span class="icon-cross"></span>
+        </a>
+        <div class="row">
+            <div class="columns small-12 small-centered text-center">
+                <img class="mtl" src="img/app/snake-head.svg" alt="Snake" />
+                <h2 class="white strong">Whats new</h2>
+                <p>Share your latest custom addition.</p>
+            </div>
+        </div>
+
+        <div class="wrapper-camera">
+            <a class="js-attach-image btn-camera">
+                <span class="icon-camera"></span>
+            </a>
+            <div class="subtext-camera">Add your photo</div>
+        </div>
+        {{else}}
+        <a href="#" class="js-unattach-image overlay-back">
+            <span class="icon-arrow-left-alt"></span>
+        </a>
+        <div class="title-page">Add new activity</div>
+        <a href="#" class="js-close-overlay overlay-dismiss">
+            <span class="icon-cross"></span>
+        </a>
+
+        <div class="bg-image" style="background-image: url('{{attachedImage}}')"></div>
+        
+        <form class="form-share" data-abide>
+            <section class="content-scrollable">
+                <div class="form-group">
+                    <label>Related to:</label>
+                    <select id="related" class="" required>
+                    {{#each getWheels}}
+                        <option value="{{_id}}"><img src="{{image}}"/>{{make}} {{model}}</option>
+                    {{/each}}
+                    </select>
+                </div>
+                <textarea id="description" rows="4" placeholder="Write a caption..."></textarea>
+            </section>
+
+            <div class="wrapper-checkbox">
+                <label for="tweeting" class="checkbox">
+                    <input type="checkbox" name="tweeting" id="tweeting" checked>
+                    <span>Post to Twitter</span>
+                </label>
+            </div>
+
+            <button class="btn-primary mbn" type='submit'>
+                {{#if tweeting}} Share &amp; Tweet {{else}} Share {{/if}}
+            </button>
+        </form>
+        
+        {{/unless}}
+
+    </div>
+    {{else}} {{> authOverlay}} {{/if}}
+</template>

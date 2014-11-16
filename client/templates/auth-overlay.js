@@ -12,7 +12,10 @@ Template.authOverlay.created = function() {
 }
 
 Template.authOverlay.events({
-  'click .js-signin': function() {
+  'click .js-twitter-signin': function() {
     Meteor.loginWithTwitter({loginStyle: 'redirect'});
+  },
+  'click .js-facebook-signin': function() {
+    Meteor.loginWithFacebook({loginStyle: 'redirect'});
   }
 });

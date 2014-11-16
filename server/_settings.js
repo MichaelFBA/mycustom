@@ -7,9 +7,22 @@ if (typeof Meteor.settings === 'undefined')
 
 _.defaults(Meteor.settings, {
   twitter: {
-    consumerKey: "PLfrg2bUh0oL0asi3R2fumRjm", 
-    secret: "sRI8rnwO3sx7xUAxNWTX0WEDWph3WEBHu6tTdJYQ5wVrJeVCCt"
+    consumerKey: "x6RsMJSyWP3IsePSeapT0t313", 
+    secret: "euB6M6ddvkVPcZ04Ab2tIi90eVXLEFj19o5jaiIsSrU3G99rkj"
+  },
+  facebook:{
+  	appId: "1451011255133475",
+  	secret: "eb79e1d17df699145b7beadcbeb1d666"
   }
+});
+
+ServiceConfiguration.configurations.remove({
+  service: "facebook"
+});
+ServiceConfiguration.configurations.insert({
+  service: "facebook",
+  appId: Meteor.settings.facebook.appId,
+  secret: Meteor.settings.facebook.secret
 });
 
 ServiceConfiguration.configurations.remove({

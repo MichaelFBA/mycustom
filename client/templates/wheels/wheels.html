@@ -7,7 +7,9 @@
 
 
             <div class="list-wheels">
-                {{#each activities}} {{> activity}} {{else}}
+                {{#each this}} 
+                    {{> myWheels}} 
+                {{else}}
                 <div class="wrapper-message">
                 	<img class="alternateLogo" src="img/app/logo-alternate.svg" alt="My Custom" />
                     <div class="title-message">Oh no! You dont have anything in your Garage yet</div>
@@ -20,4 +22,18 @@
         </div>
         <a href="#" class="btn-primary js-share">Add New Custom</a>
     </div>
+</template>
+
+
+<template name="myWheels">
+  <a href="{{path}}/wheels/{{_id}}" class="item-wheels">
+
+    <div class="bg-image" style="background-image: url('{{image}}');"></div>
+    <div class="row">
+        <div class="small-12 columns">
+            <h6 class="mvs">{{make}} {{model}} <i class="fa fa-angle-right pull-right"></i></h6>
+        </div>
+    </div>
+
+  </a>
 </template>

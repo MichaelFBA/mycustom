@@ -1,0 +1,663 @@
+/**
+ * ObjectOrientedCSS
+ *
+*/
+
+
+ /**
+ * Opacity
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Border.Color
+ */
+
+ .ofh{overflow: hidden;}
+ .ofv{overflow: visible;}
+ .ofs{overflow: scroll;}
+
+ .clear{clear: both;}
+
+ /**
+ * Opacity
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Border.Color
+ */
+.opacity0{opacity: 0;}
+.opacity10{opacity: 0.1;}
+.opacity20{opacity: 0.2;}
+.opacity30{opacity: 0.3;}
+.opacity40{opacity: 0.4;}
+.opacity50{opacity: 0.5;}
+.opacity60{opacity: 0.6;}
+.opacity70{opacity: 0.7;}
+.opacity80{opacity: 0.8;}
+.opacity90{opacity: 0.9;}
+.opacity100{opacity: 1.0;}
+/**
+* Word Wrap
+*
+* @category   ObjectOrientedCSS
+* @package    Helper
+* @subpackage Border.Color
+*/
+.word-wrap{
+ -ms-word-break: break-all;
+     word-break: break-all;
+
+     /* Non standard for webkit */
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}
+
+/**
+ * Media
+ *
+ * @category ObjectOrientedCSS
+ * @package  Media
+ */
+.media {
+    overflow: hidden;
+    *overflow: visible;
+    zoom: 1;
+}
+.media .img {
+    float: left;
+    margin-right: 20px;
+}
+.media .img img { display:block; }
+.media .imgExt {
+    float: right;
+    margin-left: 20px;
+}
+
+
+
+/**
+ * Border
+ *
+ * b = border
+ * a/t/r/b/l = all/top/right/bottom/left
+ * t/s/m/l/h = tiny/small/medium/large/huge
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Border
+ */
+.bat, .btt { border-top: 1px solid; }
+.bas, .bts { border-top: 2px solid; }
+.bam, .btm { border-top: 5px solid; }
+.bal, .btl { border-top: 8px solid; }
+.bah, .bth { border-top: 13px solid; }
+.bat, .brt { border-right: 1px solid; }
+.bas, .brs { border-right: 2px solid; }
+.bam, .brm { border-right: 5px solid; }
+.bal, .brl { border-right: 8px solid; }
+.bah, .brh { border-right: 13px solid; }
+.bat, .bbt { border-bottom: 1px solid; }
+.bas, .bbs { border-bottom: 2px solid; }
+.bam, .bbm { border-bottom: 5px solid; }
+.bal, .bbl { border-bottom: 8px solid; }
+.bah, .bbh { border-bottom: 13px solid; }
+.bat, .blt { border-left: 1px solid; }
+.bas, .bls { border-left: 2px solid; }
+.bam, .blm { border-left: 5px solid; }
+.bal, .bll { border-left: 8px solid; }
+.bah, .blh { border-left: 13px solid; }
+
+/**
+ * Border Color
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Border.Color
+ */
+.bcAlert { border-color: #fbeed5; }
+.bcSuccess { border-color: #d6e9c6; }
+.bcError { border-color: #eed3d7; }
+.bcInfo { border-color: #bce8f1; }
+.bcLight { border-color: #eeeeee; }
+.bcDark { border-color: #333333; }
+.bcWhite { border-color: #ffffff; }
+.bcBlack { border-color: #000000; }
+
+/**
+ * Border Radius
+ *
+ * br = border radius
+ * a/tl/tr/bl/br = all/top-left/top-right/bottom-left/bottom-right
+ * n/s/m/l = none/small/medium/large/huge
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Border.Radius
+ */
+.bran {
+    -moz-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+.bras, .brtls {
+    -moz-border-radius-topleft: 2px !important;
+    -webkit-border-top-left-radius: 2px !important;
+    border-top-left-radius: 2px !important;
+}
+.bram, .brtlm {
+    -moz-border-radius-topleft: 5px !important;
+    -webkit-border-top-left-radius: 5px !important;
+    border-top-left-radius: 5px !important;
+}
+.bral, .brtll {
+    -moz-border-radius-topleft: 8px !important;
+    -webkit-border-top-left-radius: 8px !important;
+    border-top-left-radius: 8px !important;
+}
+.brah, .brtlh {
+    -moz-border-radius-topleft: 20px !important;
+    -webkit-border-top-left-radius: 20px !important;
+    border-top-left-radius: 20px !important;
+}
+.bras, .brtrs {
+    -moz-border-radius-topright: 2px !important;
+    -webkit-border-top-right-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+}
+.bram, .brtrm {
+    -moz-border-radius-topright: 5px !important;
+    -webkit-border-top-right-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+}
+.bral, .brtrl {
+    -moz-border-radius-topright: 8px !important;
+    -webkit-border-top-right-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+}
+.brah, .brtrh {
+    -moz-border-radius-topright: 20px !important;
+    -webkit-border-top-right-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+.bras, .brbls {
+    -moz-border-radius-bottomleft: 2px !important;
+    -webkit-border-bottom-left-radius: 2px !important;
+    border-bottom-left-radius: 2px !important;
+}
+.bram, .brblm {
+    -moz-border-radius-bottomleft: 5px !important;
+    -webkit-border-bottom-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+.bral, .brbll {
+    -moz-border-radius-bottomleft: 8px !important;
+    -webkit-border-bottom-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+}
+.brah, .brblh {
+    -moz-border-radius-bottomleft: 20px !important;
+    -webkit-border-bottom-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
+.bras, .brbrs {
+    -moz-border-radius-bottomright: 2px !important;
+    -webkit-border-bottom-right-radius: 2px !important;
+    border-bottom-right-radius: 2px !important;
+}
+.bram, .brbrm {
+    -moz-border-radius-bottomright: 5px !important;
+    -webkit-border-bottom-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+.bral, .brbrl {
+    -moz-border-radius-bottomright: 8px !important;
+    -webkit-border-bottom-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+.brah, .brbrh {
+    -moz-border-radius-bottomright: 20px !important;
+    -webkit-border-bottom-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+/**
+ * Box Shadow
+ *
+ * bs = box-shadow
+ * a/t/r/b/l = all/top/right/bottom/left
+ * s/m/l = small/medium/large
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Box.Shadow
+ */
+.bsas {
+    -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.bsts {
+    -moz-box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.bsrs {
+    -moz-box-shadow: 2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.bsbs {
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.bsls {
+    -moz-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.bsam {
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.bstm {
+    -moz-box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.bsrm {
+    -moz-box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.bsbm {
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.bslm {
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.bsal {
+    -moz-box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+}
+.bstl {
+    -moz-box-shadow: 0px -8px 8px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px -8px 8px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -8px 8px 0px rgba(0, 0, 0, 0.1);
+}
+.bsrl {
+    -moz-box-shadow: 8px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 8px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 8px 0px 8px 0px rgba(0, 0, 0, 0.1);
+}
+.bsbl {
+    -moz-box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+}
+.bsll {
+    -moz-box-shadow: -8px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -8px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: -8px 0px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/**
+ * Display
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Display
+ */
+.block { display: block; }
+.hide { display: none; }
+.inline { display: inline; }
+.inlineBlock { display: inline-block; }
+
+/**
+ * Typography
+ *
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Type
+ */
+
+ /**
+ * Heading
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Heading
+ */
+/*h1, .h1 { font-size: 23.5px; }
+h2, .h2 { font-size: 27.5px/1.5em; }
+h3, .h3 { font-size: 24.5px/1.5em; }
+h4, .h4 { font-size: 17.5px/1.5em; }
+h5, .h5 { font-size: 14px/1.5em; }
+h6, .h6 { font-size: 11.9px/1.5em; }*/
+
+/**
+ * Font Family
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Font.Family
+ */
+.serif { font-family: serif; }
+.sansSerif { font-family: sans-serif; }
+.monospace { font-family: monospace; }
+
+/**
+ * Font Size
+ *
+ * fs = font-size
+ * t/s/m/l/h = tiny/small/medium/large/huge
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Font.Size
+ */
+.fst {
+    font-size: 11px;
+    line-height: 1.5em;
+}
+.fss {
+    font-size: 12px;
+    line-height: 1.5em;
+}
+.fsm {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+.fsl {
+    font-size: 18px;
+    line-height: 1.5em;
+}
+.fsh {
+    font-size: 64px;
+    line-height: 1.5em;
+}
+
+@media(max-width:767px){
+    .fst {
+        font-size: 11px;
+        line-height: 1.5em;
+    }
+    .fss {
+        font-size: 12px;
+        line-height: 1.5em;
+    }
+    .fsm {
+        font-size: 14px;
+        line-height: 1.5em;
+    }
+    .fsl {
+        font-size: 18px;
+        line-height: 1.5em;
+    }
+    .fsh {
+        font-size: 40px;
+        line-height: 1.5em;
+    }
+}
+
+/**
+ * Letter Spacing
+ *
+ * ls = letter-spacing
+ * t/s/m/l/h = tiny/small/medium/large/huge
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Font.Spacing
+ */
+.lst{letter-spacing:0px}
+.lss{letter-spacing:1px}
+.lsm{letter-spacing:2px}
+.lsl{letter-spacing:3px}
+.lsh{letter-spacing:4px}
+
+/**
+ * Line Height
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Line.Height
+ */
+.veryTight { line-height: 1em; }
+.tight { line-height: 1.25em; }
+.loose { line-height: 1.75em; }
+.veryLoose { line-height: 2em; }
+
+ .b, .strong{font-weight: bold;}
+
+ .fw100{font-weight: 100;}
+ .fw200{font-weight: 200;}
+ .fw300{font-weight: 300;}
+ .fw400{font-weight: 400;}
+ .fw500{font-weight: 500;}
+ .fw600{font-weight: 600;}
+ .fw700{font-weight: 700;}
+ .fw800{font-weight: 800;}
+ .fw900{font-weight: 900;}
+ .fwB{font-weight: bold;}
+ .fwN{font-weight: normal;}
+
+/**
+ * Position
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Position
+ */
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.relative { position: relative; }
+.static { position: static; }
+.front { z-index: 999; }
+.middle {z-index: 500}
+.back { z-index: -999; }
+
+
+/**
+ * Position
+ *
+ * l/r/t/b = left/right/top/bottom
+ * n/t/s/m/l/h = none/tiny/small/medium/large/huge
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Position
+ */
+ .ln{left: 0%}
+ .rn{right: 0%}
+ .tn{top: 0%}
+ .bn{bottom: 0%}
+ .lt{left: 5%}
+ .rt{right: 5%}
+ .tt{top: 5%}
+ .bt{bottom: 5%}
+ .ls{left: 25%}
+ .rs{right: 25%}
+ .ts{top: 25%}
+ .bs{bottom:25%}
+ .lm{left: 50%}
+ .rm{right: 50%}
+ .tm{top: 50%}
+ .bm{bottom: 50%}
+
+
+/**
+ * Space
+ *
+ * p/m = padding/margin
+ * a/t/r/b/l/h/v = all/top/right/bottom/left/horizontal/vertical
+ * n/t/s/m/l/h = none/tiny/small/medium/large/huge
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Space
+ */
+.ptn, .pvn, .pan { padding-top: 0px !important; }
+.ptt, .pvt, .pat { padding-top: 5px !important; }
+.pts, .pvs, .pas { padding-top: 10px !important; }
+.ptm, .pvm, .pam { padding-top: 20px !important; }
+.ptl, .pvl, .pal { padding-top: 40px !important; }
+.pth, .pvh, .pah { padding-top: 80px !important; }
+.prn, .phn, .pan { padding-right: 0px !important; }
+.prt, .pht, .pat { padding-right: 5px !important; }
+.prs, .phs, .pas { padding-right: 10px !important; }
+.prm, .phm, .pam { padding-right: 20px !important; }
+.prl, .phl, .pal { padding-right: 40px !important; }
+.prh, .phh, .pah { padding-right: 80px !important; }
+.pbn, .pvn, .pan { padding-bottom: 0px !important; }
+.pbt, .pvt, .pat { padding-bottom: 5px !important; }
+.pbs, .pvs, .pas { padding-bottom: 10px !important; }
+.pbm, .pvm, .pam { padding-bottom: 20px !important; }
+.pbl, .pvl, .pal { padding-bottom: 40px !important; }
+.pbh, .pvh, .pah { padding-bottom: 80px !important; }
+.pln, .phn, .pan { padding-left: 0px !important; }
+.plt, .pht, .pat { padding-left: 5px !important; }
+.pls, .phs, .pas { padding-left: 10px !important; }
+.plm, .phm, .pam { padding-left: 20px !important; }
+.pll, .phl, .pal { padding-left: 40px !important; }
+.plh, .phh, .pah { padding-left: 80px !important; }
+.mtn, .mvn, .man { margin-top: 0px !important; }
+.mtt, .mvt, .mat { margin-top: 5px !important; }
+.mts, .mvs, .mas { margin-top: 10px !important; }
+.mtm, .mvm, .mam { margin-top: 20px !important; }
+.mtl, .mvl, .mal { margin-top: 40px !important; }
+.mth, .mvh, .mah { margin-top: 80px !important; }
+.mrn, .mhn, .man { margin-right: 0px !important; }
+.mrt, .mht, .mat { margin-right: 5px !important; }
+.mrs, .mhs, .mas { margin-right: 10px !important; }
+.mrm, .mhm, .mam { margin-right: 20px !important; }
+.mrl, .mhl, .mal { margin-right: 40px !important; }
+.mrh, .mhh, .mah { margin-right: 80px !important; }
+.mbn, .mvn, .man { margin-bottom: 0px !important; }
+.mbt, .mvt, .mat { margin-bottom: 5px !important; }
+.mbs, .mvs, .mas { margin-bottom: 10px !important; }
+.mbm, .mvm, .mam { margin-bottom: 20px !important; }
+.mbl, .mvl, .mal { margin-bottom: 40px !important; }
+.mbh, .mvh, .mah { margin-bottom: 80px !important; }
+.mln, .mhn, .man { margin-left: 0px !important; }
+.mlt, .mht, .mat { margin-left: 5px !important; }
+.mls, .mhs, .mas { margin-left: 10px !important; }
+.mlm, .mhm, .mam { margin-left: 20px !important; }
+.mll, .mhl, .mal { margin-left: 40px !important; }
+.mlh, .mhh, .mah { margin-left: 80px !important; }
+
+/**
+ * Text
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Text
+ */
+.txtC { text-align: center; }
+.txtL { text-align: left; }
+.txtR { text-align: right; }
+.txtT { vertical-align: top; }
+.txtB { vertical-align: bottom; }
+.txtM { vertical-align: middle; }
+.txtI { vertical-align: inherit; }
+.txtS { vertical-align: super; }
+
+/**
+ * Text Shadow
+ *
+ * ts = text-shadow
+ * a/t/r/b/l = all/top/right/bottom/left
+ * s/m/l = small/medium/large
+ *
+ * @category   ObjectOrientedCSS
+ * @package    Helper
+ * @subpackage Text.Shadow
+ */
+.tsas {
+    -moz-text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+.tsts {
+    -moz-text-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px -2px 2px rgba(0, 0, 0, 0.1);
+}
+.tsrs {
+    -moz-text-shadow: 2px 0px 2px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 2px 0px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 0px 2px rgba(0, 0, 0, 0.1);
+}
+.tsbs {
+    -moz-text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.tsls {
+    -moz-text-shadow: -2px 0px 2px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: -2px 0px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: -2px 0px 2px rgba(0, 0, 0, 0.1);
+}
+.tsam {
+    -moz-text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.tstm {
+    -moz-text-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
+}
+.tsrm {
+    -moz-text-shadow: 5px 0px 5px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 5px 0px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 5px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.tsbm {
+    -moz-text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.tslm {
+    -moz-text-shadow: -5px 0px 5px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: -5px 0px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: -5px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.tsal {
+    -moz-text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+}
+.tstl {
+    -moz-text-shadow: 0px -8px 8px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 0px -8px 8px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px -8px 8px rgba(0, 0, 0, 0.1);
+}
+.tsrl {
+    -moz-text-shadow: 8px 0px 8px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 8px 0px 8px rgba(0, 0, 0, 0.1);
+    text-shadow: 8px 0px 8px rgba(0, 0, 0, 0.1);
+}
+.tsbl {
+    -moz-text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+}
+.tsll {
+    -moz-text-shadow: -8px 0px 8px rgba(0, 0, 0, 0.1);
+    -webkit-text-shadow: -8px 0px 8px rgba(0, 0, 0, 0.1);
+    text-shadow: -8px 0px 8px rgba(0, 0, 0, 0.1);
+}

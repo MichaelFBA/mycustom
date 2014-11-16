@@ -3,6 +3,7 @@ var NOTIFICATION_TIMEOUT = 3000;
 var MENU_KEY = 'menuOpen';
 var SHOW_CONNECTION_ISSUE_KEY = 'showConnectionIssue';
 var CONNECTION_ISSUE_TIMEOUT = 5000;
+// var IMAGE_KEY = 'shareOverlayAttachedImage';
 
 Session.setDefault(SHOW_CONNECTION_ISSUE_KEY, false);
 Session.setDefault(MENU_KEY, false);
@@ -171,5 +172,13 @@ Template.appBody.events({
       this.callback();
       notifications.remove(this._id);
     }
-  }
+  },
+  'click .js-attach-quick-image': function() {
+    if(Wheels.find().count()){
+      Overlay.open('activityOverlay', this);
+    }else{
+      Router.go('wheels')
+    }
+    
+  },
 });

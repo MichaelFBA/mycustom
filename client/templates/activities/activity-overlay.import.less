@@ -1,4 +1,4 @@
-.overlay.share {
+.overlay.activity {
     .wrapper-camera {
         .position(absolute, auto, 0, 0, 0, 100%);
         text-align: center;
@@ -21,9 +21,10 @@
         .background-image(linear-gradient(top, rgba(255, 255, 255, .9), rgba(255, 255, 255, 1) 10%, @color-empty 100%));
         .position(absolute, auto, 0, 0, 0, 100%);
         .transform(translate3d(0, 0, 0)); // Gpu rendering
-        min-height: 92%;
+        min-height: 50%;
         padding-bottom: 3rem;
         .content-scrollable {
+            padding-top: 1em;
             .transform(translate3d(0,0,0));
             .transition( all @transition-time @easing );
             .backface-visibility(hidden);
@@ -38,7 +39,7 @@
             margin-bottom: 0px;
             
         	label{
-        		padding: 1rem 0rem;
+        		padding: 0.5rem 0rem;
         		.flex(1);
         		flex-grow: 1;
         	}
