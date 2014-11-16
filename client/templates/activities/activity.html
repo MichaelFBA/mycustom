@@ -1,17 +1,31 @@
 <template name="activity">
-  <a href="{{path}}" class="item-activity">
+    <div class="row btt bcLight">
+        <div class="small-2 columns pln">
+            <img src="{{userAvatar}}" class="img-responsive">
+        </div>
+        <div class="small-10 columns pln">
+            <span class="strong mvs inlineBlock">{{userName}}</span>
+        </div>
+    </div>
 
-    <div class="bg-image" style="background-image: url('{{image}}');"></div>
-
-    <span class="attribution">
-      <span class="avatar">
-        <img src="{{userAvatar}}" class="image-avatar">
-      </span>
-      <span class="meta">
-        <span class="author">{{userName}}</span>  <span class="recipe">{{description}}</span>
-        <br>
-       {{#if place}}<span class="location">&mdash;{{place}}</span>{{/if}}
-       </span>
-    </span>
-  </a>
+    <a href="{{path}}" class="item-activity">
+		<div class="bg-image" style="background-image: url('{{image}}');"></div>
+    </a>
+    <div class="row bbt pvt bcLight">
+        <div class="small-7 columns plt ptt">
+            <button class="button tiny mbn secondary">Like</button>
+            <button class="button tiny mbn secondary">Comment</button>
+        </div>
+        <div class="small-5 columns text-right">
+            <small class="inlineBlock mts ptt mbn subheader"><i class="fa fa-clock-o"></i> {{formatTime date}}</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns pvm">
+       		<p class="mbn">{{description}}</p>
+        	{{#if place}}
+                <small class="subheader">&mdash;{{place}}</small>
+            {{/if}}
+        </div>
+    </div>
 </template>
