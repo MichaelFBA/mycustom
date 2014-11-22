@@ -55,3 +55,7 @@ UI.registerHelper("debug", function(optionalValue) {
     console.log(optionalValue);
   }
 });
+
+UI.registerHelper("equal", function(a, b) {
+  return a === b;
+});

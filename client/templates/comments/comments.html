@@ -5,20 +5,23 @@
         {{> nav title="Comments" subtext=model black=true back=true }}
 
         <div class="content-scrollable">
-            <div class="row bbt bcLight">
+            {{#each this}}
+            <div class="row mvm">
                 <div class="small-2 columns pln">
                     <img src="{{userAvatar}}" class="img-responsive">
                 </div>
                 <div class="small-10 columns pln prt">
-                    <span class="strong mvs inlineBlock">{{userName}}</span>
+                    <p class="mbn"><span class="strong">{{userName}}</span> {{text}}</p>
+                    <small class="inlineBlock man pan subheader"><i class="fa fa-clock-o"></i> {{formatTime date}}</small>
                 </div>
             </div>
-            <div class="row collapse">
+            {{/each}}
+            <div class="row collapse comments-bottom">
                 <div class="small-10 columns">
-                    <input type="text" placeholder="Hex Value">
+                    <textarea id="comment" class="mbn" rows="1" placeholder="Enter comment here..."></textarea>
                 </div>
                 <div class="small-2 columns">
-                    <a href="#" class="button postfix">Go</a>
+                    <a href="#" id="submitComment" class="button postfix mbn">Go</a>
                 </div>
             </div>
         </div>

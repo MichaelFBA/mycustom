@@ -1,0 +1,86 @@
+<template name="garage">
+    <div class="page garage {{activeTabClass}}">
+        {{#nav title=profile.name black=true}} 
+        <a href="#" class="nav-item js-share"><span class="icon-camera"></span></a> 
+       	{{/nav}}
+
+        <div class="image-profile" style="background-image: url('{{profile.picture}}')"></div>
+        <section class="row text-center pvs mbn">
+            <div class="small-3 columns brt bcLight">
+                <h3 class="strong mbn pan veryTight">{{getMedia _id}}</h3><small>Media</small>
+            </div>
+            <div class="small-3 columns brt bcLight">
+                <h3 class="strong mbn pan veryTight">{{getWheelsCount _id}}</h3><small>Customs</small>
+            </div>
+            <div class="small-3 columns brt bcLight">
+                <h3 class="strong mbn pan veryTight">{{getFollowers _id}}</h3><small>Followers</small>
+            </div>
+            <div class="small-3 columns ">
+                <h3 class="strong mbn pan veryTight">{{getFollowing _id}}</h3><small>Following</small>
+            </div>
+        </section>
+        
+        {{#if equal currentUser._id _id}}
+        	<button class="button expand secondary mvs">Edit Profile</button>
+        {{else}}
+        	{{#if getFollowStatus _id}}
+        		<button id="unfollow" class="button expand secondary mvs">Stop Following</button> 
+        	{{else}}
+        		<button id="follow" class="button expand secondary mvs">Follow</button>        	
+        	{{/if}}
+        {{/if}}
+
+        <!-- {{#if profile.description}} -->
+        <section class="row pvs bbt bcLight">
+            <div class="small-12 columns">
+                <p class="mbn">A certain magic happens as the beef and aromatic vegetables slowly cook down with wine, tomato paste, and broth</p>
+            </div>
+        </section>
+        <!-- {{/if}} -->
+
+
+        <div class="attribution-garage js-uncollapse">
+            <div class="btns-group">
+                <a class="btn-secondary {{#if isActiveTab 'custom'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-recipe">Customs</a>
+                <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-feed">Media</a>
+            </div>
+        </div>
+
+
+        <div class="content-scrollable static-nav custom-scrollable">
+        	<button class="button expand mbn js-share fwB absolute bn">ADD NEW CUSTOM</button>
+            <div class="list-wheels">
+            {{#each getWheels _id}} 
+            	{{> myWheels}} 
+            {{else}}
+            <div class="wrapper-message">
+            	<img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
+                <div class="title-message">Oh no! You dont have anything in your Garage yet</div>
+                <div class="subtitle-message">Add your custom car, motorycle, boat, truck or anything with an engine here.
+                </div>
+            </div>
+            {{/each}}
+            </div>
+        </div>
+
+        <div class="content-scrollable static-nav feed-scrollable">
+        	<button class="button expand mbn js-share fwB absolute bn">ADD NEW MEDIA</button>
+            <div class="list-activities">
+            	<ul class="small-block-grid-3">
+                {{#each activities}} 
+
+                	{{> imageGrid}} 
+                {{else}}
+                <div class="wrapper-message">
+	            	<img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
+	                <div class="title-message">Oh no! You dont have any media</div>
+	                <div class="subtitle-message">Find something interesting custom to share with the community.
+	                </div>
+	            </div>
+                {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</template>

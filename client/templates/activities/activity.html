@@ -1,31 +1,42 @@
 <template name="activity">
     <div class="row btt bcLight">
+        <a href="/garage/{{userId}}">
         <div class="small-2 columns pln">
             <img src="{{userAvatar}}" class="img-responsive">
         </div>
         <div class="small-10 columns pln">
-            <span class="strong mvs inlineBlock">{{userName}}</span>
+            <h6 class="strong mvs ptt">{{userName}} <small class=" pull-right subheader"><i class="fa fa-clock-o"></i> {{formatTime date}}</small></h6>
         </div>
+        </a>
     </div>
 
     <a href="{{path}}" class="item-activity">
 		<div class="bg-image" style="background-image: url('{{image}}');"></div>
     </a>
-    <div class="row bbt pvt bcLight">
-        <div class="small-7 columns plt ptt">
-            <button class="button tiny mbn secondary">Like</button>
-            <a href="{{pathFor 'comments'}}" class="button tiny mbn secondary">Comment</a>
-        </div>
-        <div class="small-5 columns text-right">
-            <small class="inlineBlock mts ptt mbn subheader"><i class="fa fa-clock-o"></i> {{formatTime date}}</small>
-        </div>
-    </div>
     <div class="row">
         <div class="small-12 columns pvm">
+            {{#if likeCount}}
+                <p class="mbs"><i class="fa fa-heart"> {{likeCount}}</i></p>
+            {{/if}}
+
        		<p class="mbn">{{description}}</p>
         	{{#if place}}
                 <small class="subheader">&mdash;{{place}}</small>
             {{/if}}
         </div>
+        {{#each getComments _id}}
+        <div class="small-12 columns pln prt mvm">
+            <p class="mbn"><span class="strong">{{userName}}</span> {{text}}</p>
+        </div>
+        {{/each}}
+        <div class="small-12 columns mbm">
+            {{#if isliked}}
+                <a id="unlike"><i class="fa fa-2x fa-thumbs-up mrm"></i></a>
+            {{else}}
+                <a id="like"><i class="fa fa-2x fa-thumbs-o-up mrm"></i></a>
+            {{/if}}
+            <a href="/comments/{{_id}}"><i class="fa fa-2x fa-comment-o"></i></a>
+        </div>
     </div>
+
 </template>

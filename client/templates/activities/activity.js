@@ -1,28 +1,40 @@
 Template.activity.rendered = function() {
-  var self = this;
+	// var self = this;
 
-  // If the activity is in a list, scroll it into view. Note, we can't just use
-  // element.scrollIntoView() because it attempts to scroll in the X direction
-  // messing up our animations
-  if (Router.current().params.activityId === self.data._id) {
-    var $activity = $(self.firstNode);
-    var top = $activity.offset().top;
-    var $parent = $(self.firstNode).closest('.content-scrollable');
-    var parentTop = $parent.offset().top;
-    $parent.scrollTop(top - parentTop);
-  }
+	// // If the activity is in a list, scroll it into view. Note, we can't just use
+	// // element.scrollIntoView() because it attempts to scroll in the X direction
+	// // messing up our animations
+	// if (Router.current().params.activityId === self.data._id) {
+	// 	var $activity = $(self.firstNode);
+	// 	var top = $activity.offset().top;
+	// 	var $parent = $(self.firstNode).closest('.content-scrollable');
+	// 	var parentTop = $parent.offset().top;
+	// 	$parent.scrollTop(top - parentTop);
+	// }
 }
 
 Template.activity.helpers({
-  firstName: function() {
-    return this.userName.split(' ')[0];
-  },
-  recipeTitle: function() {
-    return RecipesData[this.recipeName].title;
-  },
-  path: function() {
-    return Router.path('recipe', { name: this.recipeName },
-      { query: { activityId: this._id } })
-  }
+	// path: function() {
+	// 	return Router.path('recipe', { name: this.recipeName}, { query: { activityId: this._id } })
+	// },
+	getComments: function(id) {
+		return Comments.find({ discussion_id: id }).fetch()
+	},
+	likeCount:function(){
+		return Likes.find({activityId : this._id}).count();
+	},
+	isliked : function(){
+		
+		return Likes.find({activityId: this._id }, { likedById: { $in: [ Meteor.userId() ]}}).fetch();
+	}
 })
 
+Template.activity.events({
+	'click #like': function(event) {
+		event.preventDefault();
+		Meteor.call('likeActivity', this._id);
+	},
+	'click #unlike': function(event) {
+		Meteor.call('unlikeActivity', this._id);
+	}
+});
