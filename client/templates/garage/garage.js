@@ -123,5 +123,8 @@ Template.garage.events({
     },
     'click #unfollow': function(event) {
     	Meteor.call('unfollowUser', this._id);
+    },
+    'click #editAccount' : function(){
+        Router.go('/edit-account/' + this._id)
     }
 });

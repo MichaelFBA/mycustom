@@ -21,7 +21,7 @@
         </section>
         
         {{#if equal currentUser._id _id}}
-        	<button class="button expand secondary mvs">Edit Profile</button>
+        	<button id="editAccount" class="button expand secondary mvs">Edit Profile</button>
         {{else}}
         	{{#if getFollowStatus _id}}
         		<button id="unfollow" class="button expand secondary mvs">Stop Following</button> 
@@ -30,13 +30,14 @@
         	{{/if}}
         {{/if}}
 
-        <!-- {{#if profile.description}} -->
+        
         <section class="row pvs bbt bcLight">
             <div class="small-12 columns">
-                <p class="mbn">A certain magic happens as the beef and aromatic vegetables slowly cook down with wine, tomato paste, and broth</p>
+                {{#if profile.bio}}<p class="mbn">{{profile.bio}}</p>{{/if}}
+                {{#if profile.website}}<p class="mbn">{{profile.website}}</p>{{/if}}
             </div>
         </section>
-        <!-- {{/if}} -->
+        
 
 
         <div class="attribution-garage js-uncollapse">

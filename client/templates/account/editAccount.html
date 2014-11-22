@@ -1,0 +1,31 @@
+<template name="editAccount">
+{{debug}}
+	<div class="page account">
+		{{> nav title='About' black=true}}
+
+		<form class="form-share">
+			<section class="content-scrollable">
+				<div class="row">
+					<div class="small-12 columns mth">
+						<div class="form-group">
+							<label>Name</label>
+							<input type="text" id="name" class="" placeholder="Name" value="{{profile.name}}">
+						</div>
+						<div class="form-group">
+							<label>Website</label>
+							<input type="text" id="website" class="" placeholder="Add model of your custom" value="{{profile.website}}">
+						</div>
+						<div class="form-group">
+							<label>Bio</label>
+							<input type="text" id="bio" class="" placeholder="Bio" value="{{profile.bio}}">
+						</div>
+					</div>
+				</div>
+				<button id="saveData" class="button primary expand mbn" type='submit'>Save
+				</button>
+			</section>
+
+			
+		</form>
+	</div>
+</template>
