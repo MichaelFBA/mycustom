@@ -174,11 +174,7 @@ Template.appBody.events({
     }
   },
   'click .js-attach-quick-image': function() {
-    if(Wheels.find().count()){
       Overlay.open('activityOverlay', this);
-    }else{
-      Router.go('wheels')
-    }
     
   },
 });

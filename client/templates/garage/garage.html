@@ -1,7 +1,7 @@
 <template name="garage">
     <div class="page garage {{activeTabClass}}">
         {{#nav title=profile.name black=true}} 
-        <a href="#" class="nav-item js-share"><span class="icon-camera"></span></a> 
+        <!-- <a href="#" class="nav-item js-share"><span class="icon-camera"></span></a>  -->
        	{{/nav}}
 
         <div class="image-profile" style="background-image: url('{{profile.picture}}')"></div>
@@ -42,14 +42,14 @@
 
         <div class="attribution-garage js-uncollapse">
             <div class="btns-group">
-                <a class="btn-secondary {{#if isActiveTab 'custom'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-recipe">Customs</a>
+                <a class="btn-secondary {{#if isActiveTab 'custom'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-customs">Customs</a>
                 <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-feed">Media</a>
             </div>
         </div>
 
 
         <div class="content-scrollable static-nav custom-scrollable">
-        	<button class="button expand mbn js-share fwB absolute bn">ADD NEW CUSTOM</button>
+        	<button class="button expand mbn js-add-custom fwB absolute bn">ADD NEW CUSTOM</button>
             <div class="list-wheels">
             {{#each getWheels _id}} 
             	{{> myWheels}} 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="content-scrollable static-nav feed-scrollable">
-        	<button class="button expand mbn js-share fwB absolute bn">ADD NEW MEDIA</button>
+        	<button class="button expand mbn js-add-activity fwB absolute bn">ADD NEW MEDIA</button>
             <div class="list-activities">
             	<ul class="small-block-grid-3">
                 {{#each activities}} 

@@ -101,7 +101,7 @@ Template.garage.events({
         Meteor.call('unbookmarkRecipe', this.name);
     },
 
-    'click .js-show-recipe': function(event) {
+    'click .js-show-customs': function(event) {
         event.stopPropagation();
         Template.garage.setTab('custom')
     },
@@ -114,9 +114,11 @@ Template.garage.events({
     'click .js-uncollapse': function() {
         Template.garage.setTab('garage')
     },
-
-    'click .js-share': function() {
-        Overlay.open('shareOverlay', this);
+    'click .js-add-activity': function() {
+        Overlay.open('activityOverlay', this);
+    },
+    'click .js-add-custom': function() {
+        Overlay.open('wheelsOverlay', this);
     },
     'click #follow': function(event) {
     	Meteor.call('followUser', this._id);
