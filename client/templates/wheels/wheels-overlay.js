@@ -72,15 +72,13 @@ Template.wheelsOverlay.events({
 	  image: Session.get(IMAGE_KEY)
 	}, tweet, Geolocation.currentLocation(), function(error, result) {
 	  if (error) {
-		alert(error.reason);
+		console.log(error);
 	  } else {
 		Template.appBody.addNotification({
 		  action: 'View',
 		  title: 'Your custom was added.',
 		  callback: function() {
-			Router.go('wheels');
-
-			// Template.recipe.setTab('feed');
+			Template.garage.setTab('custom')
 		  }
 		});
 	  }

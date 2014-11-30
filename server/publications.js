@@ -8,7 +8,7 @@ Meteor.publish('news', function() {
 
 
 Meteor.publish('blankSearch', function() {
-  return Activities.find({}, {sort: {date: -1}, limit: 10});
+  return Wheels.find({}, {sort: {date: -1}});
 });
 
 Meteor.publish('recipe', function(name) {
