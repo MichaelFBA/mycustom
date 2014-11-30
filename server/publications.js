@@ -1,3 +1,11 @@
+
+Meteor.publish('commonUserData', function(id) {
+  return [
+    Followers.find({followerId:this.userId})
+  ];
+});
+
+
 Meteor.publish('bookmarkCounts', function() {
   return BookmarkCounts.find();
 });

@@ -1,19 +1,30 @@
 <template name="getWheels">
     <div class="page get-wheels">
-        {{> nav title=make subtext=model black=true back=true }}
+        {{> nav black=true back=true }}
 
         <div class="content-scrollable">
+
             <div class="bg-image top" style="background-image: url('{{image}}');"></div>
+        
             <div class="row bbt bcLight">
                 <div class="small-2 columns pln">
                 <img src="{{userAvatar}}" class="img-responsive"></div>
                 <div class="small-10 columns pln prt">
-                    <button class="button tiny pull-right mbn mtt">Follow</button>
+                    {{debug}}
+                    {{#if equal currentUser._id userId}}
+                    {{else}}
+                    {{#if getFollowStatus userId}}
+                        <button id="unfollow" class="button tiny pull-right mbn mtt secondary">Stop Following</button> 
+                    {{else}}
+                        <button id="follow" class="button tiny pull-right mbn mtt secondary">Follow</button>         
+                    {{/if}}
+                    {{/if}}
                     <span class="strong mvs inlineBlock">{{userName}}</span> 
                 </div>
             </div>
             <div class="row bbt bcLight">
                 <div class="small-12 columns">
+                    <h3 class="mtm">{{make}} {{model}} <small>{{year}}</small></h3>
                     <p class="mts">{{description}}</p>
                 </div>
             </div>
@@ -22,15 +33,6 @@
                     {{> imageGrid}}
                 {{/each}}
             </ul>
-            {{#if currentUser}}
-            <div class="row bbt mtm bcLight">
-                <div class="small-12 columns">
-                    <button class="expand button tiny warning">Remove custom</button>
-                </div>
-            </div>
-            {{/if}}
-
         </div>
-
     </div>
 </template>
