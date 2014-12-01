@@ -2,7 +2,7 @@ var TWEETING_KEY = 'shareOverlayTweeting';
 var IMAGE_KEY = 'shareOverlayAttachedImage';
 
 Template.activityOverlay.created = function() {
-  Session.set(TWEETING_KEY, true);
+  Session.set(TWEETING_KEY, false);
   Session.set(IMAGE_KEY, null);
 }
 
@@ -74,5 +74,16 @@ Template.activityOverlay.events({
 	});
 
 	Overlay.close();
-  }
+  },
+
+   'click #connectFB': function(event){
+   		if (!_.has( Meteor.user().services, "facebook") ) {
+    		Meteor.connectWith("facebook", {requestPermissions: ['publish_actions']});
+		}
+   },
+   'click #connectTW': function(event){
+   		if (!_.has( Meteor.user().services, "twitter") ) {
+    		Meteor.connectWith("twitter");
+		}
+   }
 });

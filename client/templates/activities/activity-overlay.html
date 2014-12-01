@@ -42,14 +42,22 @@
                     </select>
                 </div>
                 <textarea id="description" rows="4" placeholder="Write a caption..."></textarea>
+                <div class="row">
+                    <div class="small-12 columns">
+                        <h4 class="black">Share on social media</h4>
+                        <!-- <label>Share on social media</label> -->
+                        <input id="connectFB" type="checkbox" checked="{{currentUser.services.facebook}}"><label for="connectFB">Facebook</label>
+                        <input id="connectTW" type="checkbox" checked="{{currentUser.services.twitter}}"><label for="connectTW">Twitter</label>
+                    </div>
+                </div>
             </section>
 
-            <div class="wrapper-checkbox">
+<!--             <div class="wrapper-checkbox">
                 <label for="tweeting" class="checkbox">
-                    <input type="checkbox" name="tweeting" id="tweeting" checked>
+                    <input type="checkbox" name="tweeting" id="tweeting">
                     <span>Post to Twitter</span>
                 </label>
-            </div>
+            </div> -->
 
             <button class="btn-primary mbn" type='submit'>
                 {{#if tweeting}} Share &amp; Tweet {{else}} Share {{/if}}

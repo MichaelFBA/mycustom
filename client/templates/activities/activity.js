@@ -17,14 +17,25 @@ Template.activity.helpers({
 	// path: function() {
 	// 	return Router.path('recipe', { name: this.recipeName}, { query: { activityId: this._id } })
 	// },
+	likeNames: function(id){
+		return Likes.find({activityId : this._id});
+	},
 	getComments: function(id) {
-		return Comments.find({ discussion_id: id }).fetch()
+		Meteor.subscribe('getComments', id , function(result){
+			console.log('subscribed')
+		});
+		return Comments.find({ discussion_id: id });
 	},
 	likeCount:function(){
 		return Likes.find({activityId : this._id}).count();
 	},
+	commentCount:function(id){
+		Meteor.subscribe('getComments', id , function(result){
+			console.log('subscribed')
+		});
+		return Comments.find({discussion_id : this._id}).count();
+	},
 	isliked : function(){
-		
 		return Likes.find({activityId: this._id }, { likedById: { $in: [ Meteor.userId() ]}}).fetch();
 	}
 })
@@ -38,3 +49,4 @@ Template.activity.events({
 		Meteor.call('unlikeActivity', this._id);
 	}
 });
+

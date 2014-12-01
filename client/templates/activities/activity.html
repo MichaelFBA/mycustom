@@ -15,28 +15,40 @@
     </a>
     <div class="row">
         <div class="small-12 columns pvm">
-            {{#if likeCount}}
-                <p class="mbs"><i class="fa fa-heart"> {{likeCount}}</i></p>
-            {{/if}}
-
-       		<p class="mbn">{{description}}</p>
-        	{{#if place}}
+            <p class="mbn">{{description}}</p>
+            {{#if place}}
                 <small class="subheader">&mdash;{{place}}</small>
             {{/if}}
         </div>
-        {{#each getComments _id}}
-        <div class="small-12 columns pln prt mvm">
-            <p class="mbn"><span class="strong">{{userName}}</span> {{text}}</p>
-        </div>
-        {{/each}}
+
         <div class="small-12 columns mbm">
             {{#if isliked}}
-                <a id="unlike"><i class="fa fa-2x fa-thumbs-up mrm"></i></a>
+                <a id="unlike"><i class="fa fa-2x fa-thumbs-up mrs"></i> </a>
             {{else}}
-                <a id="like"><i class="fa fa-2x fa-thumbs-o-up mrm"></i></a>
+                <a id="like"><i class="fa fa-2x fa-thumbs-o-up mrs"></i></a>
             {{/if}}
-            <a href="/comments/{{_id}}"><i class="fa fa-2x fa-comment-o"></i></a>
+            {{#if likeCount}} <strong>{{likeCount}}</strong> {{/if}}
+            {{#if commentCount _id}}
+                <a class="mhs" href="/comments/{{_id}}"><i class="fa fa-2x fa-comments"></i></a>
+            {{else}}
+                <a class="mhs" href="/comments/{{_id}}"><i class="fa fa-2x fa-comment-o"></i></a>
+            {{/if}}
+            {{#if commentCount _id}} <strong>{{commentCount}}</strong> {{/if}}
         </div>
+
+<!--         <div class="small-12 columns pvm bbt bcLight">
+            {{#if likeCount}}
+                <p class="mbs"><i class="fa fa-heart"> {{likeCount}}</i> 
+                {{#each likeNames}}
+                <strong>{{userName}} </strong>
+                {{/each}}
+                </p>
+            {{/if}}
+             {{#each getComments _id}}
+            <p class="mbn"><span class="strong">{{userName}}</span> {{text}}</p>
+            {{/each}}
+        </div> -->
+        
     </div>
 
 </template>

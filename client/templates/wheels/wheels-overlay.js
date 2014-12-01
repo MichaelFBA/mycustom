@@ -2,7 +2,7 @@ var TWEETING_KEY = 'shareOverlayTweeting';
 var IMAGE_KEY = 'shareOverlayAttachedImage';
 
 Template.wheelsOverlay.created = function() {
-  Session.set(TWEETING_KEY, true);
+  Session.set(TWEETING_KEY, false);
   Session.set(IMAGE_KEY, null);
   Session.set("Type", Car);
 }
