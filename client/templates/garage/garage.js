@@ -41,6 +41,9 @@ Template.garage.setTab = function(tab) {
 }
 
 Template.garage.helpers({
+    notificationCount: function(){
+        return Notifications.find({recipientId: Meteor.userId(), isRead:false }).count()
+    }, 
     isActiveTab: function(name) {
         return Session.equals(TAB_KEY, name);
     },

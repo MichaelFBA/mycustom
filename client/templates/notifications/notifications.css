@@ -1,0 +1,17 @@
+.page.notification .content-scrollable{
+	top:3em;
+}
+
+.page.notification .alert-box.secondary{
+	border: 0px;
+	border-bottom: 1px solid #eeeeee;
+}
+.page.notification .alert-box.read{
+	background-color: #FFFFFF;
+	border: 0px;
+	border-bottom: 1px solid #eeeeee;
+	color:#000000;
+}
+.page.notification .black{
+	color:#000000;
+}

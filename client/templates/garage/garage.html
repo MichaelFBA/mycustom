@@ -1,7 +1,7 @@
 <template name="garage">
     <div class="page garage {{activeTabClass}}">
-        {{#nav title=profile.name black=true}} 
-        <!-- <a href="#" class="nav-item js-share"><span class="icon-camera"></span></a>  -->
+        {{#nav title=profile.name black=false }} 
+        <a href="{{pathFor 'notifications'}}" class="nav-item js-share"><span class="round alert label mts mrs">{{notificationCount}}</span></a> 
        	{{/nav}}
 
         <div class="image-profile" style="background-image: url('{{profile.picture}}')"></div>
@@ -42,8 +42,8 @@
 
         <div class="attribution-garage js-uncollapse">
             <div class="btns-group">
-                <a class="btn-secondary {{#if isActiveTab 'custom'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-customs">Customs</a>
-                <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-feed">Media</a>
+                <a class="btn-secondary {{#if isActiveTab 'custom'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-customs"><i class="fa fa-2x fa-car mbs"></i></a>
+                <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-feed"><i class="fa fa-2x fa-wrench mbs"></i></a>
             </div>
         </div>
 
@@ -56,8 +56,8 @@
             {{else}}
             <div class="wrapper-message">
             	<img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
-                <div class="title-message">Oh no! You dont have anything in your Garage yet</div>
-                <div class="subtitle-message">Add your custom car, motorycle, boat, truck or anything with an engine here.
+                <div class="title-message">You dont have anything in your Garage yet.</div>
+                <div class="subtitle-message">This is your space to add each of your customs. You will be able to add all the details about your custom build here.
                 </div>
             </div>
             {{/each}}
@@ -65,17 +65,16 @@
         </div>
 
         <div class="content-scrollable static-nav feed-scrollable">
-        	<button class="button expand mbn js-add-activity fwB absolute bn">ADD NEW MEDIA</button>
+        	<button class="button expand mbn js-add-activity fwB absolute bn">ADD NEW PART</button>
             <div class="list-activities">
             	<ul class="small-block-grid-3">
                 {{#each activities}} 
-
-                	{{> imageGrid}} 
+                	{{> imageGrid data=this url="activity"}} 
                 {{else}}
                 <div class="wrapper-message">
 	            	<img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
-	                <div class="title-message">Oh no! You dont have any media</div>
-	                <div class="subtitle-message">Find something interesting custom to share with the community.
+	                <div class="title-message">Oh no! You dont have any photos in your garage yet.</div>
+	                <div class="subtitle-message">This is where you can add additional images about your custom or interesting photos to share with the community.
 	                </div>
 	            </div>
                 {{/each}}

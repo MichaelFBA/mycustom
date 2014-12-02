@@ -1,7 +1,8 @@
 
 Meteor.publish('commonUserData', function(id) {
   return [
-    Followers.find({followerId:this.userId})
+    Followers.find({followerId:this.userId}),
+    Notifications.find({recipientId: this.userId}, {sort: {date: -1}, limit: 100})
   ];
 });
 

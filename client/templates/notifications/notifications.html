@@ -1,0 +1,33 @@
+<template name="notifications">
+	<div class="page notification">
+		{{> nav title='Notifications' black=false back=true}}
+
+		<div class="content-scrollable">
+
+            {{#each getNotifications}}
+            {{debug}}
+            <div class="alert-box {{#if isRead}}read{{else}}secondary{{/if}} mbt">
+              <a class="row">
+                <div class="small-2 columns pln">
+                    <img src="{{senderAvatar}}" class="img-responsive">
+                </div>
+                <div class="small-10 columns pln prt">
+                    <p class="mbn black">
+                        <span class="strong">{{senderName}}</span> 
+                    {{#if equal activityType 'like'}}
+                        Liked your {{objectType}} 
+                    {{/if}}
+                    {{#if equal activityType 'comment'}}
+                        Commented on your {{objectType}}
+                    {{/if}}
+                    </p>
+                    <small class="inlineBlock man pan subheader"><i class="fa fa-clock-o"></i> {{formatTime date}}</small>
+                </div>
+              </a>
+              <a href="#" class="close">&times;</a>
+            </div>
+            {{/each}}
+
+		</div>
+	</div>
+</template>
