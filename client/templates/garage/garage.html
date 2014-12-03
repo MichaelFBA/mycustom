@@ -1,7 +1,9 @@
 <template name="garage">
     <div class="page garage {{activeTabClass}}">
         {{#nav title=profile.name black=false }} 
-        <a href="{{pathFor 'notifications'}}" class="nav-item js-share"><span class="round alert label mts mrs">{{notificationCount}}</span></a> 
+        {{#if notificationCount}}
+            <a href="{{pathFor 'notifications'}}" class="nav-item js-share"><span class="round alert label mts mrs">{{notificationCount}}</span></a> 
+        {{/if}}
        	{{/nav}}
 
         <div class="image-profile" style="background-image: url('{{profile.picture}}')"></div>

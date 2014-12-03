@@ -63,6 +63,9 @@ Template.activityOverlay.events({
 	  if (error) {
 		alert(error.reason);
 	  } else {
+	  	
+		notifyActivity(result);
+
 		Template.appBody.addNotification({
 		  action: 'View',
 		  title: 'New activity added.',
@@ -70,6 +73,7 @@ Template.activityOverlay.events({
 			Router.go('home');
 		  }
 		});
+
 	  }
 	});
 
@@ -87,3 +91,19 @@ Template.activityOverlay.events({
 		}
    }
 });
+
+function notifyActivity(activityId){
+	var followers = Followers.find({userId:Meteor.userId()}).fetch()
+
+	_.each(followers, function(value, key, list){
+    
+        var notification = {
+            recipientId : value.followerId,
+            activityType: 'activity',
+            objectId: activityId,
+            objectType: 'activity'
+        }
+        Meteor.call('createNotification', notification);
+    
+    });
+}
