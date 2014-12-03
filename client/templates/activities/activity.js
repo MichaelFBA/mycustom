@@ -55,6 +55,14 @@ Template.activity.events({
 	},
 	'click #unlike': function(event) {
 		Meteor.call('unlikeActivity', this._id);
+
+		var notification = {
+			recipientId : this.userId,
+			activityType: 'like',
+			objectId: this._id,
+			objectType: 'activity'
+		}
+        Meteor.call('removeNotification', notification);
 	}
 });
 

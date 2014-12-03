@@ -74,6 +74,8 @@ Template.wheelsOverlay.events({
 	  if (error) {
 		console.log(error);
 	  } else {
+	  	notifyActivity(result)
+
 		Template.appBody.addNotification({
 		  action: 'View',
 		  title: 'Your custom was added.',
@@ -87,3 +89,20 @@ Template.wheelsOverlay.events({
 	Overlay.close();
   }
 });
+
+
+function notifyActivity(wheelsId){
+	var followers = Followers.find({userId:Meteor.userId()}).fetch()
+
+	_.each(followers, function(value, key, list){
+    
+        var notification = {
+            recipientId : value.followerId,
+            activityType: 'custom',
+            objectId: wheelsId,
+            objectType: 'wheels'
+        }
+        Meteor.call('createNotification', notification);
+    
+    });
+}

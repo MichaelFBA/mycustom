@@ -125,9 +125,23 @@ Template.garage.events({
     },
     'click #follow': function(event) {
     	Meteor.call('followUser', this._id);
+        var notification = {
+            recipientId : this._id,
+            activityType: 'follower',
+            objectId: Meteor.userId(),
+            objectType: 'garage'
+        }
+        Meteor.call('createNotification', notification);
     },
     'click #unfollow': function(event) {
     	Meteor.call('unfollowUser', this._id);
+        var notification = {
+            recipientId : this._id,
+            activityType: 'follower',
+            objectId: Meteor.userId(),
+            objectType: 'garage'
+        }
+        Meteor.call('removeNotification', notification);
     },
     'click #editAccount' : function(){
         Router.go('/edit-account/' + this._id)
