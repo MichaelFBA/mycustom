@@ -10,20 +10,21 @@
                 <div class="small-2 columns pln">
                 <img src="{{userAvatar}}" class="img-responsive"></div>
                 <div class="small-10 columns pln prt">
-                    {{debug}}
                     {{#if equal currentUser._id userId}}
                     {{else}}
-                    {{#if getFollowStatus userId}}
-                        <button id="unfollow" class="button tiny pull-right mbn mtt secondary">Stop Following</button> 
-                    {{else}}
-                        <button id="follow" class="button tiny pull-right mbn mtt secondary">Follow</button>         
-                    {{/if}}
+                        {{#if getFollowStatus userId}}
+                            <button id="unfollow" class="button tiny pull-right mbn mtt secondary">Stop Following</button> 
+                        {{else}}
+                            <button id="follow" class="button tiny pull-right mbn mtt secondary">Follow</button>         
+                        {{/if}}
                     {{/if}}
                     <span class="strong mvs inlineBlock">{{userName}}</span> 
                 </div>
             </div>
             <div class="row bbt bcLight">
                 <div class="small-12 columns">
+                    currentUser- {{currentUser._id}}<br>
+                    userId- {{userId}}
                     <h3 class="mtm">{{make}} {{model}} <small>{{year}}</small></h3>
                     <p class="mts">{{description}}</p>
                 </div>
