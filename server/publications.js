@@ -34,7 +34,7 @@ Meteor.publish('latestActivity', function () {
   var followersCursor = Followers.find({followerId: this.userId });
   var usersIds = followersCursor.map(function(p) { return p.userId });
   usersIds.push(this.userId);
-  return Activities.find({ userId: { $in: usersIds } },{sort: {date: -1}, limit: 10 } );
+  return Activities.find({ userId: { $in: usersIds } },{sort: {date: -1}, limit: 100 } );
 });
 
 Meteor.publish('feed', function(id) {
