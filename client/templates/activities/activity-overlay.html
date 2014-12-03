@@ -33,15 +33,16 @@
         
         <form class="form-share" data-abide>
             <section class="content-scrollable">
+                <textarea id="description" rows="4" placeholder="Write a caption..."></textarea>
                 <div class="form-group">
                     <label>Related to:</label>
-                    <select id="related" class="" required>
+                    <select id="related" class="">
+                        <option value=""></option>
                     {{#each getWheels}}
                         <option value="{{_id}}"><img src="{{image}}"/>{{make}} {{model}}</option>
                     {{/each}}
                     </select>
                 </div>
-                <textarea id="description" rows="4" placeholder="Write a caption..."></textarea>
                 <div class="row">
                     <div class="small-12 columns">
                         <h4 class="black">Share on social media</h4>

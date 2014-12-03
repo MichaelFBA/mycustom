@@ -23,15 +23,13 @@
             </div>
             <div class="row bbt bcLight">
                 <div class="small-12 columns">
-                    currentUser- {{currentUser._id}}<br>
-                    userId- {{userId}}
                     <h3 class="mtm">{{make}} {{model}} <small>{{year}}</small></h3>
                     <p class="mts">{{description}}</p>
                 </div>
             </div>
             <ul class="small-block-grid-3">
                 {{#each getRelated}}
-                    {{> imageGrid data=this url="wheels"}}
+                    {{> imageGrid data=this url="activity"}}
                 {{/each}}
             </ul>
         </div>

@@ -1,14 +1,11 @@
 <template name="search">
     <div class="page search">
         {{> nav title='Search' black=false}}
-
+        <div class="form-group">
+            <label class="title-callout">Search</label>
+            <input type="text" id="search" placeholder="Search for type, maker or comment">
+        </div>
         <div class="content-scrollable">
-
-        	<div class="form-group">
-                <label class="title-callout">Search</label>
-                <input type="text" id="search" placeholder="Search for type, maker or comment">
-            </div>
-
             <ul class="small-block-grid-3">
                 {{#each lastSearch 50}}
                     {{> imageGrid data=this url="wheels"}}

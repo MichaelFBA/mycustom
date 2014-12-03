@@ -10,5 +10,8 @@ Template.getWheels.events({
 Template.getWheels.helpers({
 	getFollowStatus: function(id){
     	return Followers.find({followerId: Meteor.userId(), userId: id }).fetch();
+    },
+    getRelated : function(){
+    	return Activities.find({wheels: this._id});
     }
 });
