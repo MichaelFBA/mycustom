@@ -36,7 +36,7 @@ Template.activity.helpers({
 		return Comments.find({discussion_id : this._id}).count();
 	},
 	isliked : function(){
-		return Likes.find({activityId: this._id, likedById: Meteor.userId()  });
+		return Likes.find({activityId: this._id, likedById: Meteor.userId()  }).fetch();
 	}
 })
 
