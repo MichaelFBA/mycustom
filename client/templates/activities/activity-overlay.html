@@ -15,10 +15,21 @@
         </div>
 
         <div class="wrapper-camera">
-            <a class="js-attach-image btn-camera">
-                <span class="icon-camera"></span>
-            </a>
-            <div class="subtext-camera">Add your photo</div>
+            <div class="row">
+                <div class="small-6 columns">
+                    <a class="js-attach-image block mbs">
+                        <span class="fa fa-camera fa-3x"></span>
+                    </a>
+                    <div class="subtext-camera">Take picture</div>
+                </div>
+                <div class="small-6 columns">
+                    <a class="js-camera-roll block mbs">
+                        <i class="fa fa-picture-o fa-3x"></i>
+                    </a>
+                    <div class="subtext-camera">Add from gallery</div>
+                </div>
+            </div>
+            
         </div>
         {{else}}
         <a href="#" class="js-unattach-image overlay-back">

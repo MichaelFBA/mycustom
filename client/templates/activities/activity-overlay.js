@@ -26,12 +26,41 @@ Template.activityOverlay.helpers({
 
 Template.activityOverlay.events({
   'click .js-attach-image': function() {
-	MeteorCamera.getPicture({width: 320}, function(error, data) {
-	  if (error)
-		alert(error.reason);
-	  else
-		Session.set(IMAGE_KEY, data);
-	});
+	// MeteorCamera.getPicture({width: 320}, function(error, data) {
+	//   if (error)
+	// 	alert(error.reason);
+	//   else
+	// 	Session.set(IMAGE_KEY, data);
+	// });
+		navigator.camera.getPicture(onSuccess, onFail, { 
+			quality: 80,
+		    destinationType: Camera.DestinationType.DATA_URL,
+		    correctOrientation:true
+		    });
+
+		function onSuccess(data) {
+		    Session.set(IMAGE_KEY, "data:image/jpeg;base64," + data);
+		}
+
+		function onFail(message) {
+		    alert('Failed because: ' + message);
+		}
+  },
+  'click .js-camera-roll':function(event){
+		navigator.camera.getPicture(onSuccess, onFail, { 
+			quality: 80,
+			destinationType: Camera.DestinationType.DATA_URL,
+		    sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+		    correctOrientation:true
+			});
+
+		function onSuccess(data) {
+		    Session.set(IMAGE_KEY, "data:image/jpeg;base64," + data);
+		}
+
+		function onFail(message) {
+		    alert('Failed because: ' + message);
+		}
   },
   
   'click .js-unattach-image': function() {
