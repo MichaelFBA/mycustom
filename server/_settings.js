@@ -33,3 +33,5 @@ ServiceConfiguration.configurations.insert({
   consumerKey: Meteor.settings.twitter.consumerKey,
   secret: Meteor.settings.twitter.secret
 });
+
+process.env.MAIL_URL="smtp://info%40my-custom.com:zxcvbnm0@smtp.gmail.com:465/"; 

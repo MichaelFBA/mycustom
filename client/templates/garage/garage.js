@@ -144,13 +144,6 @@ Template.garage.events({
         Meteor.call('removeNotification', notification);
     },
     'click #editAccount' : function(){
-        Meteor.call('notify', "Title Notification", "Body Notification", function(err, res) {
-            if (err) {
-                alert(err);
-            } else {
-               alert('Notification sent.');
-            }
-        });
-        // Router.go('/edit-account/' + this._id)
+        Router.go('/edit-account/' + this._id)
     }
 });

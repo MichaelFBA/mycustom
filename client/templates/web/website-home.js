@@ -16,7 +16,12 @@ Template.websiteHome.events({
 			} else {
 				console.log('added address');
 				$('.alert-box').removeClass('hide')
-			}
+				Meteor.call('sendEmail',
+	            emailAddress,
+	            'info@my-custom.com',
+	            'Welcome to My Custom',
+	            'This should send html message');
+				}
 		})
 	}
 });
