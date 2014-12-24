@@ -8,20 +8,40 @@ Template.garage.created = function() {
 }
 
 Template.garage.rendered = function() {
-    this.$('.garage').touchwipe({
-        wipeDown: function() {
-            if (Session.equals(TAB_KEY, 'garage'))
-                Template.garage.setTab('custom')
-        },
-        preventDefaultEvents: false
+    $('.garage-slider').slick({
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      initialSlide: 0,
+      adaptiveHeight: true,
+      asNavFor: '.garage-tabs'
     });
-    this.$('.attribution-garage').touchwipe({
-        wipeUp: function() {
-            if (!Session.equals(TAB_KEY, 'garage'))
-                Template.garage.setTab('garage')
-        },
-        preventDefaultEvents: false
+
+    $('.garage-tabs').slick({
+      dots: false,
+      infinite: false,
+      initialSlide: 0,
+      // asNavFor: '.garage-slider',
+      speed: 300,
+      centerMode: true,
+      variableWidth: true
     });
+
+    // this.$('.garage').touchwipe({
+    //     wipeDown: function() {
+    //         if (Session.equals(TAB_KEY, 'garage'))
+    //             Template.garage.setTab('custom')
+    //     },
+    //     preventDefaultEvents: false
+    // });
+    // this.$('.attribution-garage').touchwipe({
+    //     wipeUp: function() {
+    //         if (!Session.equals(TAB_KEY, 'garage'))
+    //             Template.garage.setTab('garage')
+    //     },
+    //     preventDefaultEvents: false
+    // });
 }
 
 // CSS transitions can't tell the difference between e.g. reaching
@@ -61,16 +81,6 @@ Template.garage.helpers({
                 date: -1
             }
         });
-    },
-    getMedia: function(id) {
-        return Activities.find({
-            userId: id
-        }).count();
-    },
-    getWheelsCount: function(id) {
-        return Wheels.find({
-            userId: id
-        }).count();
     },
     getWheels: function(id) {
         return Wheels.find({
@@ -145,5 +155,9 @@ Template.garage.events({
     },
     'click #editAccount' : function(){
         Router.go('/edit-account/' + this._id)
+    },
+    'click .garage-tabs div' : function(event){
+        console.log( $(event.target).index() )
+        $('.garage-tabs').slickGoTo( $(event.target).index() );
     }
 });

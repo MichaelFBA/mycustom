@@ -2,6 +2,26 @@
   background: @color-empty;
   overflow: hidden;
 
+  nav::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  .garage-tabs{
+    .slick-active, .slick-center{
+      border-bottom: 5px solid @color-primary;
+    }
+  }
+  .garage-slider{
+    .slick-slide{
+        -webkit-overflow-scrolling: touch;
+        height:60%;
+        overflow-y:scroll;
+      }
+      .slick-slide::-webkit-scrollbar { 
+        display: none; 
+      }
+  }
+
   nav .bookmarked { color: @color-primary !important; }
 
   .image-profile {

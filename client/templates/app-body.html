@@ -1,8 +1,17 @@
 <template name="appBody">
 
+    <div id="content-container" class="grid-frame vertical">
+      {{> yield}}
+    </div>
 
-  <div id="container" class="{{menuOpen}} {{overlayOpen}}">
+<!--   <div id="container" class="{{menuOpen}} {{overlayOpen}}">
     <section id="menu" class="overthrow">
+      <a href="/garage/{{currentUser._id}}" class="{{activePage 'garage'}} image-profile" style="background-image: url('{{profile.picture}}')">
+        <span class="wrapper-menu-item">
+          <i class="fa fa-2x fa-car mbs"></i>
+          <span class="title-menu">Garage</span>
+        </span>
+      </a>
       <a href="{{pathFor 'home'}}" class="{{activePage 'home'}}">
         <span class="wrapper-menu-item">
            <i class="fa fa-2x fa-newspaper-o mbs"></i>
@@ -15,18 +24,7 @@
           <span class="title-menu">Search</span>
         </span>
       </a>
-      <a href="/garage/{{currentUser._id}}" class="{{activePage 'garage'}}">
-        <span class="wrapper-menu-item">
-          <i class="fa fa-2x fa-car mbs"></i>
-          <span class="title-menu">Garage</span>
-        </span>
-      </a>
-<!--       <a href="{{pathFor 'wheels'}}" class="{{activePage 'wheels'}}">
-        <span class="wrapper-menu-item">
-          <span class="icon-question"></span>
-          <span class="title-menu">Wheels</span>
-        </span>
-      </a> -->
+
       <a href="{{pathFor 'about'}}" class="{{activePage 'about'}}">
         <span class="wrapper-menu-item">
           <i class="fa fa-2x fa-bullhorn mbs"></i>
@@ -54,9 +52,5 @@
 
     <div class="content-overlay"></div>
 
-    <div id="content-container">
-      {{> yield}}
-    </div>
-
-  </div>
+  </div> -->
 </template>

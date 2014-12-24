@@ -1,13 +1,96 @@
 <template name="garage">
     <div class="page garage {{activeTabClass}}">
-        {{#nav title=profile.name black=false }} 
-        {{#if notificationCount}}
-            <a href="{{pathFor 'notifications'}}" class="nav-item js-share"><span class="round alert label mts mrs">{{notificationCount}}</span></a> 
-        {{/if}}
-       	{{/nav}}
+        {{#nav title="Profile" black=false }} {{#if notificationCount}}
+        <a href="{{pathFor 'notifications'}}" class="nav-item js-share"><span class="round alert label mts mrs">{{notificationCount}}</span></a> {{/if}} {{/nav}}
 
-        <div class="image-profile" style="background-image: url('{{profile.picture}}')"></div>
-        <section class="row text-center pvs mbn">
+        <div class="row mtl">
+            <div class="small-3 columns">
+                <div style="background-image: url('{{profile.picture}}')"></div>
+                test
+            </div>
+            <div class="small-6 columns">
+                <h6>{{profile.name}}</h6>
+                <i class="fa fa-user"> {{getFollowers _id}}</i>
+            </div>
+            <div class="small-3 columns">
+                {{#if equal currentUser._id _id}}
+                <button id="editAccount" class="button expand secondary mvs">Edit Profile</button>
+                {{else}} {{#if getFollowStatus _id}}
+                <button id="unfollow" class="button expand secondary mvs">Stop Following</button>
+                {{else}}
+                <button id="follow" class="button expand secondary mvs">Follow</button>
+                {{/if}} {{/if}}
+            </div>
+        </div>
+
+        <div class="garage-tabs bbt btt bcLight mbn">
+            <div class="bcLight">
+                <h6 class="brt bcLight mvs phm fss">INFO</h6>
+            </div>
+            <div class="bcLight">
+                <h6 class="brt bcLight mvs phm fss">CUSTOMS</h6>
+            </div>
+            <div class="bcLight">
+                <h6 class="brt bcLight mvs phm fss">PARTS</h6>
+            </div>
+            <div class="bcLight">
+                <h6 class="brt bcLight mvs phm fss">FOLLOWERS</h6>
+            </div>
+            <div class="bcLight">
+                <h6 class="brt bcLight mvs phm fss">FOLLOWING</h6>
+            </div>
+        </div>
+
+        <div class="garage-slider">
+
+            <div>
+                <!-- profile -->
+                <section class="row">
+                    <div class="small-12 columns">
+                        {{#if profile.bio}}
+                        <p class="mbn">{{profile.bio}}</p>{{/if}} {{#if profile.website}}
+                        <p class="mbn">{{profile.website}}</p>{{/if}}
+                    </div>
+                </section>
+            </div>
+
+            <div>
+                <!-- wheels -->
+                <div class="list-wheels">
+                    {{#each getWheels _id}} {{> myWheels}} {{else}}
+                    <div class="wrapper-message">
+                        <img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
+                        <div class="title-message">You dont have anything in your Garage yet.</div>
+                        <div class="subtitle-message">This is your space to add each of your customs. You will be able to add all the details about your custom build here.
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div>
+                <!-- Parts -->
+                <div class="list-activities">
+                    <ul class="small-block-grid-3">
+                        {{#each activities}} {{> imageGrid data=this url="activity"}} {{else}}
+                        <div class="wrapper-message">
+                            <img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
+                            <div class="title-message">Oh no! You dont have any photos in your garage yet.</div>
+                            <div class="subtitle-message">This is where you can add additional images about your custom or interesting photos to share with the community.
+                            </div>
+                        </div>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <div>Followers</div>
+            <div>Following</div>
+        </div>
+
+
+
+<!--         <section class="row text-center pvs mbn">
             <div class="small-3 columns brt bcLight">
                 <h3 class="strong mbn pan veryTight">{{getWheelsCount _id}}</h3><small>Customs</small>
             </div>
@@ -20,29 +103,11 @@
             <div class="small-3 columns ">
                 <h3 class="strong mbn pan veryTight">{{getFollowing _id}}</h3><small>Following</small>
             </div>
-        </section>
-        
-        {{#if equal currentUser._id _id}}
-        	<button id="editAccount" class="button expand secondary mvs">Edit Profile</button>
-        {{else}}
-        	{{#if getFollowStatus _id}}
-        		<button id="unfollow" class="button expand secondary mvs">Stop Following</button> 
-        	{{else}}
-        		<button id="follow" class="button expand secondary mvs">Follow</button>        	
-        	{{/if}}
-        {{/if}}
-
-        
-        <section class="row pvs bbt bcLight">
-            <div class="small-12 columns">
-                {{#if profile.bio}}<p class="mbn">{{profile.bio}}</p>{{/if}}
-                {{#if profile.website}}<p class="mbn">{{profile.website}}</p>{{/if}}
-            </div>
-        </section>
-        
+        </section> -->
 
 
-        <div class="attribution-garage js-uncollapse">
+
+<!--         <div class="attribution-garage js-uncollapse">
             <div class="btns-group">
                 <a class="btn-secondary {{#if isActiveTab 'custom'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-customs"><i class="fa fa-2x fa-car mbs"></i></a>
                 <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'garage'}}no-state{{/if}} js-show-feed"><i class="fa fa-2x fa-wrench mbs"></i></a>
@@ -51,38 +116,34 @@
 
 
         <div class="content-scrollable static-nav custom-scrollable">
-        	<button class="button expand mbn js-add-custom fwB absolute bn">ADD NEW CUSTOM</button>
+            <button class="button expand mbn js-add-custom fwB absolute bn">ADD NEW CUSTOM</button>
             <div class="list-wheels">
-            {{#each getWheels _id}} 
-            	{{> myWheels}} 
-            {{else}}
-            <div class="wrapper-message">
-            	<img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
-                <div class="title-message">You dont have anything in your Garage yet.</div>
-                <div class="subtitle-message">This is your space to add each of your customs. You will be able to add all the details about your custom build here.
+                {{#each getWheels _id}} {{> myWheels}} {{else}}
+                <div class="wrapper-message">
+                    <img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
+                    <div class="title-message">You dont have anything in your Garage yet.</div>
+                    <div class="subtitle-message">This is your space to add each of your customs. You will be able to add all the details about your custom build here.
+                    </div>
                 </div>
-            </div>
-            {{/each}}
+                {{/each}}
             </div>
         </div>
 
         <div class="content-scrollable static-nav feed-scrollable">
-        	<button class="button expand mbn js-add-activity fwB absolute bn">ADD NEW PART</button>
+            <button class="button expand mbn js-add-activity fwB absolute bn">ADD NEW PART</button>
             <div class="list-activities">
-            	<ul class="small-block-grid-3">
-                {{#each activities}} 
-                	{{> imageGrid data=this url="activity"}} 
-                {{else}}
-                <div class="wrapper-message">
-	            	<img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
-	                <div class="title-message">Oh no! You dont have any photos in your garage yet.</div>
-	                <div class="subtitle-message">This is where you can add additional images about your custom or interesting photos to share with the community.
-	                </div>
-	            </div>
-                {{/each}}
+                <ul class="small-block-grid-3">
+                    {{#each activities}} {{> imageGrid data=this url="activity"}} {{else}}
+                    <div class="wrapper-message">
+                        <img class="alternateLogo" src="../img/app/logo-alternate.svg" alt="My Custom" />
+                        <div class="title-message">Oh no! You dont have any photos in your garage yet.</div>
+                        <div class="subtitle-message">This is where you can add additional images about your custom or interesting photos to share with the community.
+                        </div>
+                    </div>
+                    {{/each}}
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
 
 </template>

@@ -1,17 +1,15 @@
 <template name="home">
-    <div class="page home">
-
-        {{#nav title='My Custom' black=true}}
+    {{#nav title='My Custom' }}
         <a href="#" class="nav-item js-attach-quick-image"><span class="icon-camera"></span></a>
-        {{/nav}}
-
-        <div class="content-scrollable">
-
-        	 <div class="bg-image home">
+    {{/nav}}
+    <div class="grid-block">
+        <div class="grid-content">
+            <div class="bg-image home">
                 <h1 class="title-home">
                     <img src="../img/app/logo-local.svg" alt="Local Market" />
                 </h1>
             </div>
+        </div>
 
         	<div class="callout-news text-left">
                 <h6 class="title-callout man">News</h6>
@@ -28,7 +26,5 @@
             </div>
 
         </div>
-
-    </div>
 </template>
 
